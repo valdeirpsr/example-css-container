@@ -321,3 +321,38 @@ main > h3 {
   font-weight: bold;
   padding: 0.76rem;
 }
+
+/** Container card music */
+@container musics (max-width: 570px) {
+  .card {
+    contain: content;
+    grid-template-areas: "media media"
+      "heading heading"
+      "content content"
+      "footer footer";
+    height: auto;
+    padding: 0 0 1rem 0;
+  }
+
+  .card .card-media,
+  .card .card-media > img {
+    width: 100%;
+  }
+
+  .card .card-heading,
+  .card .card-content,
+  .card .card-footer {
+    padding: 0 1rem;
+  }
+
+  .card .card-content {
+    height: 0px;
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  .card .card-content.active {
+    height: 80px;
+    opacity: 1;
+  }
+}
